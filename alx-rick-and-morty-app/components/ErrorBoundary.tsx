@@ -1,5 +1,10 @@
 import React from "react";
+import * as Sentry from '@sentry/react';
 
+
+componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+  Sentry.captureException(error, { extra: errorInfo });
+}
 interface State {
     hasError: boolean;
 }
@@ -37,3 +42,6 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps , State>
 }
 
 export default ErrorBoundary;
+function componentDidCatch(Error: ErrorConstructor, Error1: ErrorConstructor, errorInfo: any, ErrorInfo: any) {
+    throw new Error("Function not implemented.");
+}
